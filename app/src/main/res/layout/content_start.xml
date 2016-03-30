@@ -11,12 +11,9 @@
     tools:showIn="@layout/activity_start">
 
     <EditText android:id="@+id/edit_message"
-        android:layout_weight="10"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="@string/edit_message"
-        android:layout_toLeftOf="@+id/button"
-        android:layout_toStartOf="@+id/button" />
+        android:hint="@string/edit_message" />
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -24,18 +21,18 @@
         android:onClick="sendMessage"
         android:id="@+id/button2"
         android:layout_alignParentTop="true"
-        android:layout_alignRight="@+id/button3"
-        android:layout_alignEnd="@+id/button3" />
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/button_compass"
         android:onClick="startCompass"
         android:id="@+id/button"
-        android:layout_below="@+id/button2"
-        android:layout_toLeftOf="@+id/button3"
-        android:layout_toStartOf="@+id/button3"
-        android:layout_marginTop="60dp" />
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="71dp" />
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -43,6 +40,6 @@
         android:onClick="startAccelerometer"
         android:id="@+id/button3"
         android:layout_alignTop="@+id/button"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_toRightOf="@+id/button"
+        android:layout_toEndOf="@+id/button" />
 </RelativeLayout>

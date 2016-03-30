@@ -17,5 +17,5 @@
     android:layout_height="wrap_content"
     android:layout_below="@+id/tvHeading"
     android:layout_centerHorizontal="true"
-    android:src="@drawable/img_compass" />
+    android:src="@mipmap/compass" />
     </RelativeLayout>

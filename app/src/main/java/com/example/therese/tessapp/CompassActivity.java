@@ -1,13 +1,17 @@
 package com.example.therese.tessapp;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.app.Activity;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
+import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.RotateAnimation;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -21,6 +25,13 @@ public class CompassActivity extends Activity implements SensorEventListener {
             // device sensor manager
     private float currentDegree = 0f;
     private SensorManager mSensorManager;
+    Button button;
+
+    /** Called when the user clicks the StartActivity button */
+    public void startCompass(View view) {
+        Intent intent = new Intent(this, CompassActivity.class);
+        startActivity(intent);
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -69,6 +80,8 @@ public class CompassActivity extends Activity implements SensorEventListener {
         image.startAnimation(ra);
         currentDegree = -degree;
     }
+
+
 
     @Override
     public void onAccuracyChanged(Sensor sensor, int accuracy) {

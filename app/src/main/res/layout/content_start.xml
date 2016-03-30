@@ -8,12 +8,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="horizontal"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:showIn="@layout/activity_start">
+    tools:showIn="@layout/activity_start"
+    android:background="#fff" >
 
     <EditText android:id="@+id/edit_message"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="@string/edit_message" />
+        android:hint="@string/edit_message"
+        android:layout_toLeftOf="@+id/button2"
+        android:layout_toStartOf="@+id/button2" />
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -22,7 +25,8 @@
         android:id="@+id/button2"
         android:layout_alignParentTop="true"
         android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_alignParentEnd="true"
+        />
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

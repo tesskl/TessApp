@@ -27,12 +27,6 @@ public class CompassActivity extends Activity implements SensorEventListener {
     private SensorManager mSensorManager;
     Button button;
 
-    /** Called when the user clicks the StartActivity button */
-    public void startCompass(View view) {
-        Intent intent = new Intent(this, CompassActivity.class);
-        startActivity(intent);
-    }
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -80,8 +74,6 @@ public class CompassActivity extends Activity implements SensorEventListener {
         image.startAnimation(ra);
         currentDegree = -degree;
     }
-
-
 
     @Override
     public void onAccuracyChanged(Sensor sensor, int accuracy) {

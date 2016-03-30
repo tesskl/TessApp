@@ -9,8 +9,17 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="com.example.therese.tessapp.DisplayMessageActivity"
-    tools:showIn="@layout/activity_display_message"
-    android:id="@+id/content"
+    tools:context="com.example.therese.tessapp.AccelerometerActivity"
+    tools:showIn="@layout/activity_accelerometer"
     android:background="#fff" >
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Large Text"
+        android:id="@+id/acceleration"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 </RelativeLayout>

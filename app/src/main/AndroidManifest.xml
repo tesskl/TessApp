@@ -29,7 +29,7 @@
         </activity>
         <activity
             android:name=".CompassActivity"
-            android:label="@string/title_activity_main"
+            android:label="@string/title_activity_compass"
             android:theme="@style/AppTheme.NoActionBar" />
     </application>
 

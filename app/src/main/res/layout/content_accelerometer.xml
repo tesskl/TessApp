@@ -11,7 +11,7 @@
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="com.example.therese.tessapp.AccelerometerActivity"
     tools:showIn="@layout/activity_accelerometer"
-    android:background="#fff" >
+    android:background="#b8d5e0" >
 
     <TextView
         android:layout_width="wrap_content"

@@ -18,6 +18,8 @@ public class AccelerometerActivity extends AppCompatActivity implements SensorEv
     Sensor accelerometer;
     SensorManager sm;
     TextView view;
+    float ALPHA = 0.25f; // if ALPHA = 1 OR 0, no filter applies.
+    float[] gravSensorVals;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,7 +32,7 @@ public class AccelerometerActivity extends AppCompatActivity implements SensorEv
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+                Snackbar.make(view, "Hi there!", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
             }
         });
@@ -41,13 +43,23 @@ public class AccelerometerActivity extends AppCompatActivity implements SensorEv
         view = (TextView)findViewById(R.id.acceleration);
     }
 
-    @Override
-    public void onSensorChanged(SensorEvent event) {
-        view.setText("X: " + event.values[0] +
-                "\nY: " + event.values[1] +
-                "\nZ: " + event.values[2] );
+
+    protected float[] lowPass( float[] input, float[] output ) {
+        if ( output == null ) return input;
+        for ( int i=0; i<input.length; i++ ) {
+            output[i] = output[i] + ALPHA * (input[i] - output[i]);
+        }
+        return output;
     }
 
+    @Override
+    public void onSensorChanged(SensorEvent event) {
+        gravSensorVals = lowPass(event.values.clone(), gravSensorVals);
+        String s = ("X: " + gravSensorVals[0] +
+                "\nY: " + gravSensorVals[1] +
+                "\nZ: " + gravSensorVals[2]);
+        view.setText(s);
+    }
 
     @Override
     public void onAccuracyChanged(Sensor sensor, int accuracy) {

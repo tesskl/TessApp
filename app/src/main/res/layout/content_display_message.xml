@@ -12,5 +12,5 @@
     tools:context="com.example.therese.tessapp.DisplayMessageActivity"
     tools:showIn="@layout/activity_display_message"
     android:id="@+id/content"
-    android:background="#fff" >
+    android:background="#b8d5e0">
 </RelativeLayout>

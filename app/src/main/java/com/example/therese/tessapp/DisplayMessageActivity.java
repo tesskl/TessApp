@@ -1,6 +1,7 @@
 package com.example.therese.tessapp;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -23,7 +24,7 @@ public class DisplayMessageActivity extends AppCompatActivity {
             fab.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG).setAction("Action", null).show();
+                    Snackbar.make(view, "Hi there!", Snackbar.LENGTH_LONG).setAction("Action", null).show();
                 }
             });
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -31,7 +32,8 @@ public class DisplayMessageActivity extends AppCompatActivity {
             Intent intent = getIntent();
             String message = intent.getStringExtra(StartActivity.EXTRA_MESSAGE);
             TextView textView = new TextView(this);
-            textView.setTextSize(40);
+            textView.setTextSize(30);
+            textView.setTextColor(Color.rgb(255, 64, 129));
             textView.setText(message);
 
             RelativeLayout layout = (RelativeLayout) findViewById(R.id.content);
